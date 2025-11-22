@@ -21,15 +21,17 @@ import { Card } from "../../components/ui/card";
 
 export default function Home() {
   const [email, setEmail] = useState("");
+  const [waitlist, setWaitlist] = useState<boolean>(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
 
     const formData = new FormData()
     formData.append('email', email)
+    formData.append('demo_use', waitlist ? 'true' : 'false')
 
     // Call the server action
-    await fetch('/demo_website/action', {
+    await fetch('/action', {
       method: 'POST',
       body: formData,
     })
@@ -135,15 +137,15 @@ export default function Home() {
       {/* ======= WAITLIST STRIPE ======= */}
       <section
         id="waitlist"
-        className="bg-[#382189] text-white py-12 sm:py-16 mt-6"
+        className="bg-[#382189] text-white py-20 sm:py-20 mt-6"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <div className="mx-auto max-w-md text-center">
+          <div className="mx-auto max-w-2xl text-center">
             <div className="mx-auto h-10 w-10 rounded-full bg-[#6A3BEB] grid place-items-center">
               <Mail className="h-120 w-120" />
             </div>
-            <h3 className="mt-3 text-3xl mb-3 font-semibold">Join the waitlist!</h3>
-            <p className="mt-1 text-m opacity-90">
+            <h3 className="mt-3 text-4xl mb-3 font-semibold">Join the waitlist!</h3>
+            <p className="mt-1 text-lg opacity-90">
               Be the first to know when we launch. Plus, early members get
               exclusive perks.
             </p>
@@ -151,16 +153,25 @@ export default function Home() {
             <form
               className="mt-5 space-y-3"
               onSubmit={handleSubmit}>
-              <div className="rounded-2xl bg-white p-3 ring-1 ring-black/10 p-10">
+              <div className="rounded-2xl bg-white ring-1 ring-black/10 p-10 px-10 max-w-2xl mx-auto">
                   <input
                     type="email"
                     required
                     placeholder="Your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className= "w-full border border-gray-300 bg-[#D9D9D9] rounded-md px-3 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    className= "w-full border border-gray-300 bg-[#D9D9D9] rounded-md px-5 py-3 text-m text-black focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                   />
-                  <button type="submit" className="mt-5 w-full bg-[#643AD3] rounded-md hover:bg-[#2f167a]/90 transition duration-200 p-1.5">
+                  <div className="flex flex-row"> 
+                    <p className="mt-5 text-s mr-2 text-[#6F6F6F] opacity-100">Would you be interested in being one of our first testers to shape CollegeCart?</p>
+                    <input
+                      type="checkbox"
+                      checked={waitlist}
+                      onChange={(e) => setWaitlist(e.target.checked)}
+                      className="mt-5 accent-[#643AD3]"
+                    />
+                  </div>
+                  <button type="submit" className="mt-5 text-s py-3 w-full bg-[#643AD3] rounded-md hover:bg-[#2f167a]/90 transition duration-200 p-1.5">
                     Join now
                   </button>
                 {/* <Input
@@ -194,7 +205,7 @@ function FeatureCard({
   text: string;
 }) {
   return (
-    <Card className="rounded-xl bg-[#F2FBFF] ring-[0.3px] ring-[#5b5b5b] p-5 sm:p-6 hover:shadow-lg transition-shadow duration-200">
+    <Card className="rounded-xl bg-[#F2FBFF] ring-[0.3px] ring-[#5b5b5b] p-5 sm:p-3 hover:shadow-lg transition-shadow duration-200">
       <div className="flex flex-col items-start gap-3 ml-2 mr-2">
         <div className="grid place-items-center h-10 w-10 rounded-lg bg-[#CEE2FF] mt-4 ml-4 mb-3">
           {icon}
