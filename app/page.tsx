@@ -37,7 +37,7 @@ export default function Home() {
     })
 
     setEmail('')
-    alert('Welcome to the waitlist!')
+    alert("You're officially on the waitlist... and officially cooler now.")
   }
 
   return (
