@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import {
-  ShoppingCart,
-  Sparkles,
   ShieldCheck,
   PiggyBank,
   MapPin,
@@ -15,10 +13,7 @@ import {
 import Logo from './icon.png'
 import PreviewImage from './preview.png';
 import { Button } from "../../components/ui/button";
-import { Input } from "../../components/ui/input";
 import { Card } from "../../components/ui/card";
-
-
 export default function Home() {
   const [email, setEmail] = useState("");
   const [waitlist, setWaitlist] = useState<boolean>(false);
