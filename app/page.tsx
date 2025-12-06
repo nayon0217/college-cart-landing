@@ -62,7 +62,7 @@ export default function Home() {
         {/* Primary CTA */}
         <div className="mt-4">
           <Link href="#waitlist">
-            <Button className="rounded-full bg-[#382189] hover:bg-[#2f167a]/90 px-5">
+            <Button className="rounded-full bg-[#382189] text-[#F2FBFF] hover:bg-[#2f167a]/90 px-5">
               Join the Waitlist <span className="ml-1">→</span>
             </Button>
           </Link>
@@ -204,7 +204,7 @@ function FeatureCard({
           {icon}
         </div>
         <div className="ml-5">
-          <h3 className="text-[18px] font-semibold">{title}</h3>
+          <h3 className="text-[18px] font-semibold text-black">{title}</h3>
           <p className="mt-4 text-sm text-slate-600 leading-4 mb-5">{text}</p>
         </div>
       </div>
