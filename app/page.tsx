@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import Logo from './icon.png'
 import PreviewImage from './preview.png';
-import { Button } from "../../components/ui/button";
-import { Card } from "../../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
 export default function Home() {
   const [email, setEmail] = useState("");
   const [waitlist, setWaitlist] = useState<boolean>(false);
@@ -56,9 +56,7 @@ export default function Home() {
         </div>
 
         <p className="mt-3 max-w-md text-[18px] text-[#333064] leading-5 text-slate-700 mt-3 text-normal">
-          The easiest way to find textbooks, furniture, appliances, and more
-          from students at CMU. Save money, reduce waste, and transact within
-          your campus.
+          The easiest way to buy/sell textbooks, furniture, appliances, and more on campus. Save money, reduce waste, and look good doing it.
         </p>
 
         {/* Primary CTA */}
@@ -89,8 +87,8 @@ export default function Home() {
                 <ShieldCheck className="h-4 w-4" />
               </div>
               <div className="text-m">
-                <p className="font-semibold leading-4 mb-1">Campus Verified</p>
-                <p className="text-slate-600 leading-4">Safe and Trusted</p>
+                <p className="font-semibold leading-4 mb-1">AndrewID Verified</p>
+                <p className="text-slate-600 leading-4">Exclusively CMU.</p>
               </div>
             </div>
           </div>
@@ -100,7 +98,7 @@ export default function Home() {
       {/* ======= FEATURES ======= */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
         <h2 className="text-center text-2xl sm:text-4xl font-regular">
-          Built by students, for students
+          Made by Tartans, for Tartans.
         </h2>
 
         <div className="mt-6 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
@@ -108,23 +106,23 @@ export default function Home() {
             icon={
               <ShieldCheck className="h-5 w-5  text-indigo-700" aria-hidden />
             }
-            title="Campus Verified"
-            text="Only students with verified Andrew email can buy and sell with confidence."
+            title="Verified Andrew ID Access"
+            text="Ditch the sketchy meetups with strangers. Every user is authenticated with their Andrew ID, ensuring you interact only with fellow students."
           />
           <FeatureCard
             icon={<PiggyBank className="h-5 w-5 text-indigo-700" />}
-            title="Save Money"
-            text="Find furniture, appliances, and textbooks at student prices — reuse beats retail."
+            title="Flexible Payment Options"
+            text="Short on cash but have extra dining dollars? We offer the unique ability to pay using meal blocks."
           />
           <FeatureCard
             icon={<MapPin className="h-5 w-5 text-indigo-700" />}
-            title="Hyperlocal"
-            text="Set your campus pickup or CMU locations for convenient, safe exchanges."
+            title="Zero-Hassle Handoffs"
+            text="Forget shipping fees and delivery delays. Coordinating a quick exchange at the UC between classes is fast, free, and effortless."
           />
           <FeatureCard
             icon={<MessageSquare className="h-5 w-5 text-indigo-700" />}
-            title="Easy Communication"
-            text="Chat directly with other students, agree on meeting spots, and arrange reliable pick-ups."
+            title="Sustainable & Cost-Effective"
+            text=" Stop overpaying for new items or dumping perfectly good gear. Save your money and the environment."
           />
         </div>
       </section>
